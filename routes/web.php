@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/society','SocietyController@index')->name('societyIndex');
+Route::get('/society/create','SocietyController@create')->name('societyCreate');

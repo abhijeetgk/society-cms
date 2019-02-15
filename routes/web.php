@@ -19,4 +19,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/society','SocietyController@index')->name('societyIndex');
-Route::get('/society/create','SocietyController@create')->name('societyCreate');
+Route::get('/society/insert','SocietyController@insert')->name('societyInsert');
+Route::post('/society/create','SocietyController@create')->name('societyCreate');

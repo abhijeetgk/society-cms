@@ -7,7 +7,7 @@
         </a>
         <ul class="dropdown-menu">
           <li><a href="{{ route('societyIndex') }}">List</a></li>
-          <li><a href="{{ route('societyCreate') }}">Add New</a></li>
+          <li><a href="{{ route('societyInsert') }}">Add New</a></li>
         </ul>
       </li>
       <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Members</a>

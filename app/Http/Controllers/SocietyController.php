@@ -16,7 +16,8 @@ class SocietyController extends Controller
      */
     public function index()
     {
-        return view('society.list');
+        $society_list = \App\Society::paginate(10);
+        return view('society.list', ['society_list' => $society_list]);
     }
 
     /**

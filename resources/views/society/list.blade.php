@@ -1,5 +1,35 @@
 @extends('layouts.app')
 
 @section('content')
-List of society
+<div class="container">
+<div class="row">
+    
+</div>
+<table class="table table-striped">
+
+  <thead class="">
+    <tr>
+        <td colspan=4><a href="{{ route('societyInsert') }}"><button type="button" class="btn btn-primary">Add New</button></a></td>
+    </tr>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+    @foreach ($society_list as $society)
+    <tr>
+        <th scope="row">{{ $society->id }}</th>
+        <td>{{ $society->name }}</td>
+        <td><address>{{ $society->address }}</address></td>
+        <td><i class="material-icons" style="font-size:20px">edit</i></td>
+    </tr>
+    
+    @endforeach
+    </table>
+</div>
+{{ $society_list->links() }}
 @endsection

@@ -25,6 +25,7 @@
       rel="stylesheet">
 </head>
 <body>
+    <div class="container">
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
@@ -107,6 +108,7 @@
             @yield('content')
         </div>
         </main>
+    </div>
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
 <div class="row">
-    
+
 </div>
 <table class="table table-striped">
 
@@ -19,15 +19,18 @@
     </tr>
   </thead>
   <tbody>
-    
+
     @foreach ($society_list as $society)
     <tr>
         <th scope="row">{{ $society->id }}</th>
         <td>{{ $society->name }}</td>
         <td><address>{{ $society->address }}</address></td>
-        <td><i class="material-icons" style="font-size:20px">edit</i></td>
+        <td>
+          <a href="{{ route('societySelect', ['soc_id' => $society->id])}}"><i class="material-icons" style="font-size:20px">done</i></a>
+          <a href="{{ route('society.edit',['soc_id' => $society->id]) }}"><i class="material-icons" style="font-size:20px">edit</i></a>
+          </td>
     </tr>
-    
+
     @endforeach
     </table>
 </div>

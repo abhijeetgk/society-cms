@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\Input;
 
 class SocietyController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -44,7 +48,7 @@ class SocietyController extends Controller
     }
     public function insert()
     {
-        return view('society.create');
+        return view('society.create',['society'=>'']);
     }
 
     /**
@@ -75,9 +79,10 @@ class SocietyController extends Controller
      * @param  \App\Society  $society
      * @return \Illuminate\Http\Response
      */
-    public function edit(Society $society)
+    public function edit(Request $request,$soc_id)
     {
-        //
+        $society = \App\Society::findOrFail($soc_id);
+        return view('society.create',['society'=>$society]);
     }
 
     /**

@@ -17,7 +17,7 @@ class checkSocietySession
     {
         $society_name = session('society_name', '');
         if(!$society_name){
-             return redirect()->route('societyIndex');
+             return redirect()->route('societyIndex')->with('error','Please select society first');
         }
         return $next($request);
     }

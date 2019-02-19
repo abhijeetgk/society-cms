@@ -102,4 +102,15 @@ class SocietyController extends Controller
     {
         //
     }
+
+    /**
+     * Select and store society in session
+     * required for all other operations
+     */
+    public function select(Request $request,$soc_id){
+        $society = \App\Society::findOrFail($soc_id);
+        $request->session()->put('soc_id', $soc_id);
+        $request->session()->put('society_name', $society->name);
+        return redirect()->route('societyIndex');
+    }
 }

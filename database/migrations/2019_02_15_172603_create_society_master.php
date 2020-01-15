@@ -14,13 +14,14 @@ class CreateSocietyMaster extends Migration
     public function up()
     {
         Schema::create('society_master', function (Blueprint $table) {
-                $table->increments('id');
+                $table->increments('id')->unsigned()->index();
                 $table->string('name');
                 $table->text('address');
                 $table->enum('status',['y','n']);
                 $table->timestamps();
             
         });
+        
     }
 
     /**

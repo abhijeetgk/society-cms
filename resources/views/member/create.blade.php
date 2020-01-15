@@ -6,7 +6,7 @@
 <div class="panel-heading">Add a New Member</div>
   <div class="panel-body">
   
-<form class="form-horizontal" action="" method="POST">
+<form class="form-horizontal" action="{{ route('memberCreate') }}" method="POST">
 {{ csrf_field() }}
   <div class="form-group">
     <label class="control-label col-sm-2" for="name">Name:</label>

@@ -24,16 +24,10 @@ Route::get('/society/edit/{soc_id}','SocietyController@edit')->name('society.edi
 Route::post('/society/create','SocietyController@create')->name('societyCreate');
 Route::get('/society/select/{soc_id}','SocietyController@select')->name('societySelect');
 
-Route::get('/member','MemberController@index')->name('member.index')->middleware('check.society');
-Route::any('/member/add','MemberController@add')->name('member.add')->middleware('check.society');
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+Route::get('/member','MemberController@index')->name('memberIndex')->middleware('check.society');
+Route::get('/member/insert','MemberController@insert')->name('memberInsert')->middleware('check.society');
+Route::post('/member/create','MemberController@create')->name('memberCreate')->middleware('check.society');
+Route::any('/member/add','MemberController@add')->name('memberAdd');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

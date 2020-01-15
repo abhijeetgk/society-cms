@@ -1,5 +1,6 @@
 <?php
 
+
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AddSocietyRequestValidate;
@@ -114,7 +115,7 @@ class SocietyController extends Controller
      */
     public function select(Request $request,$soc_id){
         $society = \App\Society::findOrFail($soc_id);
-        $request->session()->put('soc_id', $soc_id);
+        $request->session()->put('society_id', $soc_id);
         $request->session()->put('society_name', $society->name);
         return redirect()->route('societyIndex');
     }

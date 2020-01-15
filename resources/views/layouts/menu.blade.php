@@ -12,8 +12,8 @@
       </li>
       <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Members</a>
         <ul class="dropdown-menu">
-          <li><a href="#">Add New</a></li>
-          <li><a href="#">List</a></li>
+          <li><a href="{{ route('memberInsert') }}">Add New</a></li>
+          <li><a href="{{ route('memberIndex') }}">List</a></li>
         </ul>
       </li>
       <li><a class="dropdown-toggle" data-toggle="dropdown" href="#">Receipts</a>
